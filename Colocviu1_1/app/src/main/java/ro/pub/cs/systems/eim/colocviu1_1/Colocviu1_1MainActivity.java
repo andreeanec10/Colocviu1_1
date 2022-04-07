@@ -24,7 +24,12 @@ public class Colocviu1_1MainActivity extends AppCompatActivity {
     Button navigate_button;
     Integer number = 0;
     private int serviceStatus = 0;
-    IntentFilter intentFilter;
+    IntentFilter intentFilter = new IntentFilter();;
+
+    final public static String[] actionTypes = {
+            "ro.pub.cs.systems.eim.arithmeticmean",
+
+    };
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -89,6 +94,7 @@ public class Colocviu1_1MainActivity extends AppCompatActivity {
             getApplicationContext().startService(intent);
             serviceStatus = 1;
         }
+        intentFilter.addAction(actionTypes[0]);
 
     }
 
