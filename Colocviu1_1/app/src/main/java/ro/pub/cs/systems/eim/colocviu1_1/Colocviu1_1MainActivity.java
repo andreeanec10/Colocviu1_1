@@ -53,6 +53,12 @@ public class Colocviu1_1MainActivity extends AppCompatActivity {
                 press.setText("North");
             else
                 press.setText(message + ", North");
+            if (number == 4 && serviceStatus == 0) {
+                Intent intent = new Intent(getApplicationContext(), Colocviu1_1Service.class);
+                intent.putExtra("message_b", press.getText().toString());
+                getApplicationContext().startService(intent);
+                serviceStatus = 1;
+            }
         });
         east.setOnClickListener(v-> {
             number++;
@@ -62,6 +68,12 @@ public class Colocviu1_1MainActivity extends AppCompatActivity {
                 press.setText("East");
             else
                 press.setText(message + ", East");
+            if (number == 4 && serviceStatus == 0) {
+                Intent intent = new Intent(getApplicationContext(), Colocviu1_1Service.class);
+                intent.putExtra("message_b", press.getText().toString());
+                getApplicationContext().startService(intent);
+                serviceStatus = 1;
+            }
         });
 
         west.setOnClickListener(v-> {
@@ -72,6 +84,12 @@ public class Colocviu1_1MainActivity extends AppCompatActivity {
                 press.setText("West");
             else
                 press.setText(message + ", West");
+            if (number == 4 && serviceStatus == 0) {
+                Intent intent = new Intent(getApplicationContext(), Colocviu1_1Service.class);
+                intent.putExtra("message_b", press.getText().toString());
+                getApplicationContext().startService(intent);
+                serviceStatus = 1;
+            }
         });
         south.setOnClickListener(v-> {
             number++;
@@ -81,6 +99,12 @@ public class Colocviu1_1MainActivity extends AppCompatActivity {
                 press.setText("South");
             else
                 press.setText(message + ", South");
+            if (number == 4 && serviceStatus == 0) {
+                Intent intent = new Intent(getApplicationContext(), Colocviu1_1Service.class);
+                intent.putExtra("message_b", press.getText().toString());
+                getApplicationContext().startService(intent);
+                serviceStatus = 1;
+            }
         });
 
         navigate_button.setOnClickListener(v->{
@@ -89,11 +113,7 @@ public class Colocviu1_1MainActivity extends AppCompatActivity {
             startActivityForResult(intent, 10);
         });
 
-        if (number == 4 && serviceStatus == 0) {
-            Intent intent = new Intent(getApplicationContext(), Colocviu1_1Service.class);
-            getApplicationContext().startService(intent);
-            serviceStatus = 1;
-        }
+
         intentFilter.addAction(actionTypes[0]);
 
     }

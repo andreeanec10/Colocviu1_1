@@ -15,9 +15,11 @@ public class ProcessingThread extends Thread {
             "ro.pub.cs.systems.eim.arithmeticmean",
 
     };
+    String string = new String();
     private Context context;
 
-    public ProcessingThread(Context context) {
+    public ProcessingThread(Context context, String str) {
+        this.string = str;
         this.context = context;
     }
 

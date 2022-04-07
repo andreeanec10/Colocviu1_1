@@ -9,7 +9,7 @@ public class Colocviu1_1Service extends Service {
 
     @Override
     public int onStartCommand(Intent intent, int flags, int startId) {
-        processingThread = new ProcessingThread(this);
+        processingThread = new ProcessingThread(this, intent.getStringExtra("message_b"));
         processingThread.start();
 
         return Service.START_REDELIVER_INTENT;
